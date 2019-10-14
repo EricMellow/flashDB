@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 2019_10_13_222757) do
     t.text "answer"
     t.integer "times_seen"
     t.integer "times_correct"
-    t.bigint "groups_id", null: false
+    t.bigint "group_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["groups_id"], name: "index_card_data_on_groups_id"
+    t.index ["group_id"], name: "index_card_data_on_group_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -32,5 +32,5 @@ ActiveRecord::Schema.define(version: 2019_10_13_222757) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "card_data", "groups", column: "groups_id"
+  add_foreign_key "card_data", "groups"
 end

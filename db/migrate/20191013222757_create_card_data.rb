@@ -5,7 +5,7 @@ class CreateCardData < ActiveRecord::Migration[6.0]
       t.text :answer
       t.integer :times_seen
       t.integer :times_correct
-      t.references :groups, null: false, foreign_key: true
+      t.references :group, null: false, foreign_key: true
 
       t.timestamps
     end
